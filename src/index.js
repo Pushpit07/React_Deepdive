@@ -1,10 +1,39 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 
 // stateless functional component
 // always return jsx
-function Greeting() {
-	return <h4>This is the first component</h4>;
+function BookList() {
+	return (
+		<section>
+			<Book />
+			<Book />
+			<Book />
+			<Book />
+		</section>
+	);
 }
 
-ReactDOM.render(<Greeting />, document.getElementById("root"));
+const Book = () => {
+	return (
+		<article>
+			<Image />
+			<Title />
+			<Author />
+		</article>
+	);
+};
+
+const Image = () => {
+	return <img src="https://m.media-amazon.com/images/I/711RcAn0EiL._AC_UY436_FMwebp_QL65_.jpg" alt="" />;
+};
+
+const Title = () => {
+	return <h1>Think and Grow Rich</h1>;
+};
+
+const Author = () => {
+	return <h4>Napoleon Hill</h4>;
+};
+
+ReactDOM.render(<BookList />, document.getElementById("root"));
